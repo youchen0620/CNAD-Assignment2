@@ -1,4 +1,5 @@
 from app import bubble_sort
+from app import classify_triangle
 
 def test_bubble_sort1():
     arr = []
@@ -39,3 +40,18 @@ def test_bubble_sort9():
 def test_bubble_sort10():
     arr = [2147483647, 2147483646, -2147483648, -2147483647]
     assert bubble_sort(arr) == [-2147483648, -2147483647, 2147483646, 2147483647]
+
+def test_equilateral():
+    assert classify_triangle(3, 3, 3) == "Equilateral"
+
+def test_isosceles_side12():
+    assert classify_triangle(3, 3, 4) == "Isosceles"
+
+def test_isosceles_side13():
+    assert classify_triangle(3, 4, 3) == "Isosceles"
+
+def test_isosceles_side23():
+    assert classify_triangle(4, 3, 3) == "Isosceles"
+
+def test_scalene():
+    assert classify_triangle(3, 4, 5) == "Scalene"
